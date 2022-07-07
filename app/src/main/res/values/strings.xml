@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">SmsForward</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="explanation_tv">Ese app serva para hacer la redirección de mensajes SMS para una URL, como si fuese un webhook.
+        Cuando iniciar el app, los mensajes que ya existen en el buzón de entrada no serán enviados, sin embargo los nuevos mensajes que sean de los orígenes configurados serán enviados para las rutas configuradas.
+        Después de hacer clic en el botón de empezar, puedes cerrar la aplicación.
+    </string>
+    <string name="start_button">Empezar</string>
+</resources>
