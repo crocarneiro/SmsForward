@@ -8,4 +8,12 @@
         Después de hacer clic en el botón de empezar, puedes cerrar la aplicación.
     </string>
     <string name="start_button">Empezar</string>
+
+    <!-- MENU -->
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="home_mi">Home</string>
+    <string name="history_mi">Histórico</string>
+    <string name="origins_mi">Orígenes</string>
+    <string name="urls_mi">Rutas</string>
 </resources>

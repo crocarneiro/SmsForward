@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home_mi"
+        android:title="@string/home_mi"
+        android:icon="@drawable/ic_baseline_home_24"
+    />
+    <item
+        android:id="@+id/history_mi"
+        android:title="@string/history_mi"
+        android:icon="@drawable/ic_baseline_history_24"
+    />
+    <item
+        android:id="@+id/origins_mi"
+        android:title="@string/origins_mi"
+        android:icon="@drawable/ic_baseline_phone_callback_24"
+    />
+    <item
+        android:id="@+id/urls_mi"
+        android:title="@string/urls_mi"
+        android:icon="@drawable/ic_baseline_forward_to_inbox_24"
+    />
+</menu>
