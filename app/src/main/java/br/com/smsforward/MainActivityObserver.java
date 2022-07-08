@@ -18,7 +18,7 @@ import com.google.android.material.navigation.NavigationView;
 import java.util.concurrent.Executor;
 
 import br.com.smsforward.data.Database;
-import br.com.smsforward.services.SyncMessagesService;
+import br.com.smsforward.services.MessageService;
 
 public class MainActivityObserver implements LifecycleEventObserver {
     private AppCompatActivity activity;
@@ -76,7 +76,7 @@ public class MainActivityObserver implements LifecycleEventObserver {
     }
 
     private void syncSms() {
-        SyncMessagesService service = new SyncMessagesService();
+        MessageService service = new MessageService();
         Executor executor = Application.getExecutorService();
         ContentResolver contentResolver = activity.getApplicationContext().getContentResolver();
         service.syncAll(contentResolver, executor);

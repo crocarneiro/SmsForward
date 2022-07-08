@@ -75,10 +75,6 @@ public class QueryMessagesService {
                     msgData.put(cursor.getColumnName(i), cursor.getString(i));
                 }
 
-                msgData.keySet().forEach(key -> {
-                    Log.i(getClass().getCanonicalName(), key + ": " + msgData.get(key));
-                });
-
                 messages.add(new Message(
                         Long.parseLong(msgData.get("_id")),
                         msgData.get("address"),
