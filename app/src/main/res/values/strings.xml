@@ -18,4 +18,7 @@
     <string name="history_mi">Histórico</string>
     <string name="origins_mi">Orígenes</string>
     <string name="urls_mi">Rutas</string>
+
+    <!-- ORIGINS -->
+    <string name="delete_origin_content_description">Elimina el orígen correspondiente.</string>
 </resources>
