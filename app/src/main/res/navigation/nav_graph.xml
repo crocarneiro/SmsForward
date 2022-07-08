@@ -10,4 +10,10 @@
         android:name="br.com.smsforward.ui.home.HomeScreen"
         android:label="SMS Forwarder"
         tools:layout="@layout/fragment_home_screen" />
+
+    <fragment
+        android:id="@+id/originsScreen"
+        android:name="br.com.smsforward.ui.origins.OriginsScreen"
+        android:label="Orígenes"
+        tools:layout="@layout/fragment_origins_screen" />
 </navigation>

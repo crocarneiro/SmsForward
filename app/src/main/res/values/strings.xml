@@ -21,4 +21,11 @@
 
     <!-- ORIGINS -->
     <string name="delete_origin_content_description">Elimina el orígen correspondiente.</string>
+    <string name="add_origin_dialog_title">Adicionar origen</string>
+    <string name="add_origin_edit_text_helper">Origen</string>
+    <string name="add_origin_dialog_positive_btn">Salvar</string>
+    <string name="add_origin_dialog_negative_btn">Cancelar</string>
+    <string name="add_origin_empty_address_error_message">No es posible crear una origen vacía.</string>
+    <string name="add_origin_not_numeric_address_error_message">El origen debe contener solamente números.</string>
+    <string name="add_origin_success_message">Origin creada con éxito</string>
 </resources>

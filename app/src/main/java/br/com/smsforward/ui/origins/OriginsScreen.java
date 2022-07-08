@@ -14,6 +14,7 @@ public class OriginsScreen extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getLifecycle().addObserver(new OriginsScreenObserver(this));
     }
 
     @Override

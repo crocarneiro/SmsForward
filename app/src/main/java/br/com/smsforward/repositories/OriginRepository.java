@@ -8,7 +8,7 @@ import androidx.room.Update;
 
 import java.util.List;
 
-import br.com.smsforward.model.Origin;
+import br.com.smsforward.model.origin.Origin;
 
 @Dao
 public interface OriginRepository {

@@ -4,11 +4,14 @@ import androidx.room.RoomDatabase;
 
 import br.com.smsforward.model.IntegrationHistory;
 import br.com.smsforward.model.Message;
+import br.com.smsforward.model.origin.Origin;
 import br.com.smsforward.repositories.IntegrationHistoryRepository;
 import br.com.smsforward.repositories.MessageRepository;
+import br.com.smsforward.repositories.OriginRepository;
 
-@androidx.room.Database(entities = { Message.class, IntegrationHistory.class }, version = 1)
+@androidx.room.Database(entities = { Message.class, IntegrationHistory.class, Origin.class}, version = 2)
 public abstract class AppDatabase extends RoomDatabase {
     public abstract IntegrationHistoryRepository integrationHistoryRepository();
     public abstract MessageRepository messageRepository();
+    public abstract OriginRepository originRepository();
 }

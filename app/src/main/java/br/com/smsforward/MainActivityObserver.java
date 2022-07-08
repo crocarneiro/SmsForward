@@ -65,6 +65,9 @@ public class MainActivityObserver implements LifecycleEventObserver {
         navigationView.setNavigationItemSelectedListener(menuItem -> {
             NavController navController = Navigation.findNavController(activity, R.id.nav_host_fragment);
             switch (menuItem.getItemId()) {
+                case R.id.origins_mi:
+                    navController.navigate(R.id.originsScreen);
+                    break;
                 default:
                     break;
             }
