@@ -56,13 +56,14 @@ public class HomeScreenObserver implements LifecycleEventObserver {
     private void setupScreen() {
         ConstraintLayout container = activity.findViewById(R.id.home_screen_service_running_container);
         if(isServiceRunning()) {
-            container.setVisibility(View.INVISIBLE);
-            button.setText(R.string.start_button);
-            button.setBackgroundColor(activity.getResources().getColor(R.color.green));
-        } else {
             container.setVisibility(View.VISIBLE);
             button.setText(R.string.stop_button);
             button.setBackgroundColor(activity.getResources().getColor(R.color.red));
+        } else {
+            container.setVisibility(View.INVISIBLE);
+            button.setText(R.string.start_button);
+            button.setBackgroundColor(activity.getResources().getColor(R.color.green));
+
         }
     }
 
@@ -76,7 +77,7 @@ public class HomeScreenObserver implements LifecycleEventObserver {
                 Log.i(getClass().getCanonicalName(), "State = " + workInfo.getState());
             });
 
-            return infoList.stream().filter(e -> e.getState().isFinished()).count() == 0;
+            return infoList.size() > 0 && infoList.stream().filter(e -> e.getState().isFinished()).count() == 0;
         } catch (ExecutionException | InterruptedException e) {
             return false;
         }
