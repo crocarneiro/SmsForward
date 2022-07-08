@@ -9,6 +9,7 @@ import br.com.smsforward.model.IntegrationHistory;
 import br.com.smsforward.model.Message;
 import br.com.smsforward.repositories.IntegrationHistoryRepository;
 import br.com.smsforward.repositories.MessageRepository;
+import br.com.smsforward.requests.MessageRequests;
 import br.com.smsforward.utils.time.DateTimeFactory;
 
 public class MessageService {
@@ -86,5 +87,12 @@ public class MessageService {
                 ""
         );
         integrationHistoryRepository.insertIntegrationHistory(integrationHistory);
+
+        MessageRequests messageRequests = new MessageRequests();
+        try {
+            messageRequests.postMessageTo("https://8scqx6ifii.execute-api.us-east-2.amazonaws.com/Prod/", message);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
