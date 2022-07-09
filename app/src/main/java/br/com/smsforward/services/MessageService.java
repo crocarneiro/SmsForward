@@ -80,17 +80,18 @@ public class MessageService {
     private void integrateMessage(Message message) {
         Log.i(getClass().getCanonicalName(), "Here we are going to integrate the message " + message.getInternalId());
         long newMessageId = syncMessage(message);
-        IntegrationHistory integrationHistory = new IntegrationHistory(
-                DateTimeFactory.now(),
-                newMessageId,
-                message.getInternalId(),
-                ""
-        );
-        integrationHistoryRepository.insertIntegrationHistory(integrationHistory);
 
         MessageRequests messageRequests = new MessageRequests();
         try {
             messageRequests.postMessageTo("https://8scqx6ifii.execute-api.us-east-2.amazonaws.com/Prod/", message);
+
+            IntegrationHistory integrationHistory = new IntegrationHistory(
+                    DateTimeFactory.now(),
+                    newMessageId,
+                    message.getInternalId(),
+                    ""
+            );
+            integrationHistoryRepository.insertIntegrationHistory(integrationHistory);
         } catch (Exception e) {
             e.printStackTrace();
         }
