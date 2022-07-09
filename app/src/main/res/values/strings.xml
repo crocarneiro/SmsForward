@@ -28,4 +28,9 @@
     <string name="add_origin_empty_address_error_message">No es posible crear una origen vacía.</string>
     <string name="add_origin_not_numeric_address_error_message">El origen debe contener solamente números.</string>
     <string name="add_origin_success_message">Origin creada con éxito</string>
+
+    <string name="delete_origin_dialog_title">Eliminar origen</string>
+    <string name="delete_origin_dialog_message">¿Está seguro que quieres eliminar ese origen?</string>
+    <string name="delete_origin_dialog_positive_btn">Eliminar origen</string>
+    <string name="delete_origin_dialog_negative_btn">Cancelar</string>
 </resources>
