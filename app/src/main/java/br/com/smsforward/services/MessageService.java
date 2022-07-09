@@ -15,10 +15,12 @@ import br.com.smsforward.utils.time.DateTimeFactory;
 public class MessageService {
     private final MessageRepository messageRepository;
     private final IntegrationHistoryRepository integrationHistoryRepository;
+    private final OriginService originService;
 
     public MessageService() {
-        messageRepository = Database.getDatabase().messageRepository();
-        integrationHistoryRepository = Database.getDatabase().integrationHistoryRepository();
+        this.messageRepository = Database.getDatabase().messageRepository();
+        this.integrationHistoryRepository = Database.getDatabase().integrationHistoryRepository();
+        this.originService = new OriginService();
     }
 
     public void integrateMessages(ContentResolver contentResolver) {
@@ -29,9 +31,19 @@ public class MessageService {
              * If the message exists, then it was a message that already existed when the application
              * ran for the first time, or is a message that already is integrated.
              **/
-            if(messageNotExists(message))
+            if(messageNotExists(message) && originIsValid(message.getAddress()))
                 integrateMessage(message);
         });
+    }
+
+    /**
+     * We should only send messages which address are registered as origins in the app. Thus,
+     * if the address is in the database, then the origin is valid.
+     * @param address The number of the sender of the message
+     * @return true if the origin is valid, false otherwise
+     */
+    private boolean originIsValid(String address) {
+        return originService.findOriginByAddress(address) != null;
     }
 
     public void syncAll(ContentResolver contentResolver, Executor executor) {

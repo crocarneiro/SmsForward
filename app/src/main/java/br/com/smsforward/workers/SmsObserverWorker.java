@@ -22,19 +22,6 @@ public class SmsObserverWorker extends Worker {
     @Override
     public Result doWork() {
         try {
-//            Cursor cursor = getApplicationContext().getContentResolver().query(Uri.parse("content://sms/inbox"), null, null, null, null);
-//            if(cursor.moveToFirst()) {
-//                do {
-//                    Map<String, String> msgData = new HashMap<>();
-//                    for(int i = 0; i < cursor.getColumnCount(); i++) {
-//                        msgData.put(cursor.getColumnName(i), cursor.getString(i));
-//                    }
-//
-//                    msgData.keySet().forEach(key -> {
-//                        Log.i(getClass().getCanonicalName(), key + ": " + msgData.get(key));
-//                    });
-//                } while(cursor.moveToNext());
-//            }
             // Per minute
             for(int minutes = 0; minutes < 15; minutes++) {
                 for(int tenSecondsInterval = 0; tenSecondsInterval < 6; tenSecondsInterval++) {

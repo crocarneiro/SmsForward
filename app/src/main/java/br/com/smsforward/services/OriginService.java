@@ -17,6 +17,10 @@ public class OriginService {
         Database.getDatabase().originRepository().insertOrigin(origin);
     }
 
+    public Origin findOriginByAddress(String address) {
+        return originRepository.findOriginByAddress(address);
+    }
+
     public void deleteOrigin(Origin origin) {
         originRepository.deleteOrigin(origin);
     }
