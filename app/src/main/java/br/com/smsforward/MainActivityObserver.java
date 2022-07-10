@@ -71,6 +71,9 @@ public class MainActivityObserver implements LifecycleEventObserver {
                 case R.id.origins_mi:
                     navController.navigate(R.id.originsScreen);
                     break;
+                case R.id.integration_destinies_mi:
+                    navController.navigate(R.id.integrationDestiniesScreen);
+                    break;
                 default:
                     break;
             }

@@ -37,4 +37,11 @@
     <!-- INTEGRATION DESTINIES -->
     <string name="delete_integration_destiny_content_description">Elimina la ruta correspondiente</string>
     <string name="edit_integration_destiny_content_description">Edita la ruta correspondiente</string>
+    <string name="add_integration_destiny_description_et_hint">Descripción de la ruta</string>
+    <string name="add_integration_destiny_url_et_hint">URL de la request</string>
+    <string name="add_integration_destiny_headers_hint">Headers de la request separados por punto y coma. Ejemplo: Authorization=Bearer ...; X-custom-header=...</string>
+    <string name="add_integration_destiny_dialog_title">Adicionar ruta</string>
+    <string name="add_integration_destiny_dialog_positive_btn">Salvar</string>
+    <string name="add_integration_destiny_dialog_negative_btn">Cancelar</string>
+    <string name="add_integration_destiny_success_message">Ruta creada con éxito</string>
 </resources>

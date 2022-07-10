@@ -16,7 +16,7 @@
         android:icon="@drawable/ic_baseline_phone_callback_24"
     />
     <item
-        android:id="@+id/urls_mi"
+        android:id="@+id/integration_destinies_mi"
         android:title="@string/urls_mi"
         android:icon="@drawable/ic_baseline_forward_to_inbox_24"
     />

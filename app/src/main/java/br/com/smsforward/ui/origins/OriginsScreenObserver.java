@@ -50,10 +50,10 @@ public class OriginsScreenObserver implements LifecycleEventObserver {
 
             AlertDialog.Builder builder = new AlertDialog.Builder(activity);
             builder
-                    .setView(dialogView)
-                    .setTitle(R.string.add_origin_dialog_title)
-                    .setPositiveButton(R.string.add_origin_dialog_positive_btn, null)
-                    .setNegativeButton(R.string.add_origin_dialog_negative_btn, (dialog, id) -> dialog.dismiss());
+                .setView(dialogView)
+                .setTitle(R.string.add_origin_dialog_title)
+                .setPositiveButton(R.string.add_origin_dialog_positive_btn, null)
+                .setNegativeButton(R.string.add_origin_dialog_negative_btn, (dialog, id) -> dialog.dismiss());
             AlertDialog dialog = builder.create();
 
             dialog.setOnShowListener(dialogInterface -> {

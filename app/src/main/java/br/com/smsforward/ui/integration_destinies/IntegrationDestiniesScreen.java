@@ -14,6 +14,7 @@ public class IntegrationDestiniesScreen extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getLifecycle().addObserver(new IntegrationDestiniesScreenObserver(this));
     }
 
     @Override

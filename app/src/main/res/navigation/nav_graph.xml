@@ -16,4 +16,9 @@
         android:name="br.com.smsforward.ui.origins.OriginsScreen"
         android:label="Orígenes"
         tools:layout="@layout/fragment_origins_screen" />
+    <fragment
+        android:id="@+id/integrationDestiniesScreen"
+        android:name="br.com.smsforward.ui.integration_destinies.IntegrationDestiniesScreen"
+        android:label="Rutas"
+        tools:layout="@layout/fragment_integration_destinies_screen" />
 </navigation>
