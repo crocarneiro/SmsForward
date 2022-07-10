@@ -29,4 +29,7 @@ public interface IntegrationDestinyRepository {
 
     @Query("SELECT * FROM integration_destinies WHERE url = :url")
     IntegrationDestiny findIntegrationDestinyByUrl(String url);
+
+    @Query("SELECT * FROM integration_destinies WHERE description = :description")
+    IntegrationDestiny findIntegrationDestinyByDescription(String description);
 }

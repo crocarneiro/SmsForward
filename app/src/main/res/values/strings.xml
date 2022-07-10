@@ -33,4 +33,8 @@
     <string name="delete_origin_dialog_message">¿Está seguro que quieres eliminar ese origen?</string>
     <string name="delete_origin_dialog_positive_btn">Eliminar origen</string>
     <string name="delete_origin_dialog_negative_btn">Cancelar</string>
+
+    <!-- INTEGRATION DESTINIES -->
+    <string name="delete_integration_destiny_content_description">Elimina la ruta correspondiente</string>
+    <string name="edit_integration_destiny_content_description">Edita la ruta correspondiente</string>
 </resources>
