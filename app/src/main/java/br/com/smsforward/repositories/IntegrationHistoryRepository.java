@@ -8,7 +8,7 @@ import androidx.room.Update;
 
 import java.util.List;
 
-import br.com.smsforward.model.IntegrationHistory;
+import br.com.smsforward.model.integration_history.IntegrationHistory;
 
 @Dao
 public interface IntegrationHistoryRepository {

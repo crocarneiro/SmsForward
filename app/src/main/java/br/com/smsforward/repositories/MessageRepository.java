@@ -6,7 +6,7 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 import java.util.List;
-import br.com.smsforward.model.Message;
+import br.com.smsforward.model.message.Message;
 
 @Dao
 public interface MessageRepository {

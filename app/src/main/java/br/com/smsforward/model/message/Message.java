@@ -1,4 +1,4 @@
-package br.com.smsforward.model;
+package br.com.smsforward.model.message;
 
 import androidx.room.Entity;
 import androidx.room.Index;

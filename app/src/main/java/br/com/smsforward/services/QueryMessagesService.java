@@ -3,7 +3,7 @@ package br.com.smsforward.services;
 import android.content.ContentResolver;
 import android.database.Cursor;
 import android.net.Uri;
-import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.concurrent.Executor;
 import br.com.smsforward.BackgroundServiceCallback;
 import br.com.smsforward.Result;
-import br.com.smsforward.model.Message;
+import br.com.smsforward.model.message.Message;
 
 /**
  * Fields available in the query in content://sms/inbox
