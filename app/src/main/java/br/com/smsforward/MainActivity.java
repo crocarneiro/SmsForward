@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         Set<Integer> topLevelDestinations = new HashSet<>();
         topLevelDestinations.add(R.id.homeScreen);
         topLevelDestinations.add(R.id.originsScreen);
+        topLevelDestinations.add(R.id.integrationDestiniesScreen);
 
         AppBarConfiguration appBarConfiguration =
                 new AppBarConfiguration.Builder(topLevelDestinations)
