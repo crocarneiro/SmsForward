@@ -21,4 +21,8 @@ public class IntegrationDestinyService {
     public List<IntegrationDestiny> findAllIntegrationDestinies() {
         return integrationDestinyRepository.findAllIntegrationDestinies();
     }
+
+    public int deleteIntegrationDestiny(IntegrationDestiny integrationDestiny) {
+        return integrationDestinyRepository.deleteIntegrationDestiny(integrationDestiny);
+    }
 }
