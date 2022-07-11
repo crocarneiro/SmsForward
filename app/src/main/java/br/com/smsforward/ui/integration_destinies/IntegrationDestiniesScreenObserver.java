@@ -12,8 +12,14 @@ import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleEventObserver;
 import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+
+import java.util.List;
+
 import br.com.smsforward.MainViewModel;
 import br.com.smsforward.R;
 import br.com.smsforward.services.IntegrationDestinyService;
@@ -84,6 +90,10 @@ public class IntegrationDestiniesScreenObserver implements LifecycleEventObserve
 
     private void loadIntegrationDestinies() {
         mainViewModel.getIntegrationDestinies().observe(activity, integrationDestinies -> {
+            RecyclerView recyclerView = activity.findViewById(R.id.integration_destinies_screen_rv);
+            IntegrationDestinyAdapter adapter = new IntegrationDestinyAdapter(activity, integrationDestinies);
+            recyclerView.setAdapter(adapter);
+            recyclerView.setLayoutManager(new LinearLayoutManager(activity));
         });
     }
 }
