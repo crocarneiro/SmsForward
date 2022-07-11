@@ -18,6 +18,10 @@ public class IntegrationDestinyService {
         return integrationDestinyRepository.insertIntegrationDestiny(integrationDestiny);
     }
 
+    public int updateIntegrationDestiny(IntegrationDestiny integrationDestiny) {
+        return integrationDestinyRepository.updateIntegrationDestiny(integrationDestiny);
+    }
+
     public List<IntegrationDestiny> findAllIntegrationDestinies() {
         return integrationDestinyRepository.findAllIntegrationDestinies();
     }

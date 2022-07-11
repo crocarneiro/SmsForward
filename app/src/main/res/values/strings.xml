@@ -45,6 +45,8 @@
     <string name="add_integration_destiny_dialog_negative_btn">Cancelar</string>
     <string name="add_integration_destiny_success_message">Ruta creada con éxito</string>
 
+    <string name="update_integration_destiny_success_message">Ruta actualizada con éxito</string>
+
     <string name="delete_integration_destiny_dialog_title">Eliminar ruta</string>
     <string name="delete_integration_destiny_dialog_message">¿Está seguro que quieres eliminar esa ruta?</string>
     <string name="delete_integration_destiny_dialog_positive_btn">Eliminar ruta</string>
