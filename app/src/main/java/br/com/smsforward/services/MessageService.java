@@ -15,11 +15,13 @@ import br.com.smsforward.utils.time.DateTimeFactory;
 public class MessageService {
     private final MessageRepository messageRepository;
     private final IntegrationHistoryRepository integrationHistoryRepository;
+    private final IntegrationDestinyService integrationDestinyService;
     private final OriginService originService;
 
     public MessageService() {
         this.messageRepository = Database.getDatabase().messageRepository();
         this.integrationHistoryRepository = Database.getDatabase().integrationHistoryRepository();
+        this.integrationDestinyService = new IntegrationDestinyService();
         this.originService = new OriginService();
     }
 
@@ -73,6 +75,10 @@ public class MessageService {
         return 0;
     }
 
+    public int deleteMessage(Message message) {
+        return messageRepository.deleteMessage(message);
+    }
+
     private Boolean messageNotExists(Message message) {
         return !messageExists(message);
     }
@@ -92,20 +98,24 @@ public class MessageService {
     private void integrateMessage(Message message) {
         Log.i(getClass().getCanonicalName(), "Here we are going to integrate the message " + message.getInternalId());
         long newMessageId = syncMessage(message);
+        message.setId(newMessageId);
 
-        MessageRequests messageRequests = new MessageRequests();
-        try {
-            messageRequests.postMessageTo("https://8scqx6ifii.execute-api.us-east-2.amazonaws.com/Prod/", message);
-
-            IntegrationHistory integrationHistory = new IntegrationHistory(
-                    DateTimeFactory.now(),
-                    newMessageId,
-                    message.getInternalId(),
-                    ""
-            );
-            integrationHistoryRepository.insertIntegrationHistory(integrationHistory);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        integrationDestinyService.findAllIntegrationDestinies().forEach(integrationDestiny -> {
+            try {
+                MessageRequests messageRequests = new MessageRequests();
+                messageRequests.postMessageTo(integrationDestiny, message);
+                IntegrationHistory integrationHistory = new IntegrationHistory(
+                        DateTimeFactory.now(),
+                        message.getId(),
+                        message.getInternalId(),
+                        integrationDestiny.getUrl()
+                );
+                integrationHistoryRepository.insertIntegrationHistory(integrationHistory);
+            } catch (Exception e) {
+                e.printStackTrace();
+                Log.e(getClass().getCanonicalName(), "Error integrating message, deleting it from database in order to retry again later.");
+                deleteMessage(message);
+            }
+        });
     }
 }

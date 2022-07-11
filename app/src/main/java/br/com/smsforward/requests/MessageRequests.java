@@ -1,10 +1,10 @@
 package br.com.smsforward.requests;
 
 import android.util.Log;
-
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
+import java.util.Arrays;
+import br.com.smsforward.model.integration_destiny.IntegrationDestiny;
 import br.com.smsforward.model.message.Message;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
@@ -21,7 +21,7 @@ public class MessageRequests {
         this.client = new OkHttpClient();
     }
 
-    public void postMessageTo(String url, Message message) throws Exception {
+    public void postMessageTo(IntegrationDestiny integrationDestiny, Message message) throws Exception {
         ObjectMapper mapper = new ObjectMapper();
         String body;
         try {
@@ -31,11 +31,21 @@ public class MessageRequests {
         }
 
         RequestBody requestBody = RequestBody.create(body, JSON);
-        Request request = new Request.Builder()
+        Request.Builder builder = new Request.Builder()
                 .post(requestBody)
-                .url(url)
-                .build();
+                .url(integrationDestiny.getUrl());
 
+        String headers = integrationDestiny.getHeaders();
+        if(!headers.isEmpty()) {
+            Arrays.stream(integrationDestiny.getHeaders().split(";")).forEach(header -> {
+                header = header.trim();
+                String key = header.split("=")[0].trim();
+                String value = header.split("=")[1].trim();
+                builder.header(key, value);
+            });
+        }
+
+        Request request = builder.build();
         try (Response response = client.newCall(request).execute()) {
             if(response.isSuccessful())
                 Log.i(getClass().getCanonicalName(), "Message successfully posted to URL.");
