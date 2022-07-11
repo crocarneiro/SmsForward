@@ -15,6 +15,8 @@ import androidx.lifecycle.LifecycleOwner;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.snackbar.Snackbar;
+
 import java.util.concurrent.Executor;
 
 import br.com.smsforward.data.Database;
@@ -75,6 +77,7 @@ public class MainActivityObserver implements LifecycleEventObserver {
                     navController.navigate(R.id.integrationDestiniesScreen);
                     break;
                 default:
+                    Snackbar.make(activity.findViewById(R.id.nav_host_fragment), activity.getString(R.string.feature_not_implemented_yet), Snackbar.LENGTH_LONG).show();
                     break;
             }
 

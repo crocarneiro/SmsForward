@@ -11,6 +11,8 @@
     <string name="stop_button">Encerrar</string>
     <string name="working_running">El servicio esta ejecutando en segundo plano esperando nuevos mensajes.\nPresione el botón "encerrar" para detener el servicio e dejar de observar los SMSs.</string>
 
+    <string name="feature_not_implemented_yet">Opción aún no está lista.</string>
+
     <!-- MENU -->
     <string name="open">Open</string>
     <string name="close">Close</string>
